@@ -56,14 +56,15 @@ generations.
 </div>
 
 <!-- main section  -->
- <section class="flex flex-row gap-4 px-5 py-10 bg-[#F0FDF4]" >
+ <section class="flex flex-col md:flex-row gap-4 px-5 py-10 bg-[#F0FDF4] " >
 <div class=" font-bold gap-y-5"  >
   <h2 class="text-2xl">Categories</h2><hr>
 <ul id="categories">
 </ul>
 </div>
 <div>
-  <div id="all-cards" class="grid grid-cols-3 gap-4 pl-4">
+  <div id="all-cards" 
+  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pl-4 justify-items-center  ">
       
   </div>
 </div>
@@ -71,19 +72,19 @@ generations.
  </section>
 <!-- campaign section  -->
  
-<div class="">
- <div class="text-center text-2xl bg-[#DCFCE780] font-semibold pt-15">About the campaign</div>
- <div class="hero min-h-screen mx-auto px-10  md:px-50 bg-[#DCFCE780]">
+<div class="w-full">
+ <div class="text-center text-2xl bg-[#DCFCE780] font-semibold py-3">About the campaign</div>
+ <div class="hero  mx-auto px-2 md:px-12 bg-[#DCFCE780]">
   
-  <div class="hero-content flex-col lg:flex-row gap-8">
+  <div class="hero-content flex-col md:flex-row gap-8 ">
     <img
       src="assets/about.png"
-      class="max-w-sm rounded-lg shadow-2xl"/>
-    <div>
-      <p class="py-6">
+      class="w-full max-w-xs sm:max-w-sm md:max-w-md rounded-lg shadow-2xl "/>
+    <div class="text-center lg:text-left">
+      <p class="py-4 text-gray-700">
         Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.
       </p>
-         <ul class="list-disc list-inside">
+         <ul class="list-disc list-inside space-y-2 text-gray-700">
             <li>Restoration of natural habitats</li>
             <li>Improvement of air quality</li>
             <li>Support for local communities</li>
@@ -93,9 +94,9 @@ generations.
 </div>
 </div>
 <!-- our impact section  -->
-<div class="bg-[#CFF0DC] mx-auto  p-10">
-         <div class="text-center text-2xl font-semibold py-10">Our Impact</div>
-         <div class="impact-card-container gap-8 flex flex-col md:flex-row lg:flex-row">
+<div class="bg-[#CFF0DC] mx-auto  p-8 md:p-12">
+         <div class="text-center text-2xl md:text-3xl font-semibold py-10">Our Impact</div>
+         <div class="impact-card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
            <div class="card card-border bg-base-100 w-96 hover:bg-[#CFF1ee]">
              <div class="card-body flex justify-center items-center hover:font-bold">
                <h2 class="card-title text-green-500 hover:font-bold">500k+</h2>
@@ -143,5 +144,39 @@ generations.
 
 </footer>
 <script src="index.js"></script>
+
+
+
+<!-- Open the modal-->
+<!-- <button class="btn" onclick="my_modal_2.showModal()">open modal</button> -->
+<dialog id="my_modal_5" class="modal">
+  <div class="modal-box">
+    <div id="details-container">
+       <div class="card bg-base-200 w-full h-100 shadow-sm rounded-lg">
+            <h2 class="card-title font-bold ">
+              ${details.name}
+            </h2>
+            <figure class="h-28 ">
+              <img class="object-contain"
+                src="${card.image}"
+                alt="Shoes" />
+            </figure>
+            <div class="card-body">
+             <p class="font-semibold">Category: ৳${details.category}</p>
+             <p class="font-semibold">Price: ৳${details.price}</p>
+            <p>Description: ${details.description}</p>
+              <div class="card-actions justify-between">
+                <div class="badge bg-[#DCFCE7] rounded-full font-semibold">${card.category}</div>
+                
+              </div>
+                  <div><button class="btn btn-success w-full rounded-full text-black">Success</button></div>
+             </div>
+        </div>
+    </div>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
 </body>
 </html>
