@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="">
+  <!-- navbar section  -->
 <div class="navbar bg-base-100 shadow-sm bg-green-700">
   <div class="navbar-start">
     <div class="dropdown">
@@ -36,6 +37,8 @@
     <button class="btn btn-outline btn-warning-100 bg-[#FACC15] rounded-full text-[#15803D]">Plant a Tree</button>
   </div>
 </div>
+
+<!-- hero section  -->
 <div
   class="hero bg-[#CFF0DC] pt-7 relative"
   style="background-image: url(assets/hero-leaf1.png),url(assets/hero-leaf2.png); background-position: left bottom, right bottom; background-size: 25% auto, 25% auto ; background-repeat: no-repeat, no-repeat;"
@@ -52,7 +55,20 @@ generations.
   </div>
 </div>
 
-
+<!-- main section  -->
+ <section class="flex flex-row gap-4 px-5 py-10 bg-[#F0FDF4]" >
+<div class=" font-bold gap-y-5"  >
+  <h2 class="text-2xl">Categories</h2><hr>
+<ul id="categories">
+</ul>
+</div>
+<div>
+  <div id="all-cards" class="grid grid-cols-3 gap-4 pl-4">
+      
+  </div>
+</div>
+<div></div>
+ </section>
 <!-- campaign section  -->
  
 <div class="">
@@ -80,21 +96,21 @@ generations.
 <div class="bg-[#CFF0DC] mx-auto  p-10">
          <div class="text-center text-2xl font-semibold py-10">Our Impact</div>
          <div class="impact-card-container gap-8 flex flex-col md:flex-row lg:flex-row">
-           <div class="card card-border bg-base-100 w-96">
-             <div class="card-body flex justify-center items-center">
-               <h2 class="card-title text-green-500">500k+</h2>
+           <div class="card card-border bg-base-100 w-96 hover:bg-[#CFF1ee]">
+             <div class="card-body flex justify-center items-center hover:font-bold">
+               <h2 class="card-title text-green-500 hover:font-bold">500k+</h2>
                <p>Tree planted</p>
              </div>
            </div>
-           <div class="card card-border bg-base-100 w-96">
-             <div class="card-body flex justify-center items-center">
-               <h2 class="card-title text-green-500">120+</h2>
+           <div class="card card-border bg-base-100 w-96 hover:bg-[#CFF1ee]">
+             <div class="card-body flex justify-center items-center hover:font-bold">
+               <h2 class="card-title text-green-500 hover:font-bold">120+</h2>
                <p>Communities involved</p>
              </div>
            </div>
-           <div class="card card-border bg-base-100 w-96">
-             <div class="card-body flex justify-center items-center">
-               <h2 class="card-title text-green-500">30+</h2>
+           <div class="card card-border bg-base-100 w-96 hover:bg-[#CFF1ee] ">
+             <div class="card-body flex justify-center items-center hover:font-bold">
+               <h2 class="card-title text-green-500 hover:font-bold ">30+</h2>
                <p>Countries Reached</p>
              </div>
            </div>
@@ -110,13 +126,13 @@ generations.
           <input type="text" class="input text-gray-600" placeholder="Your Name" />
           <input type="email" class="input text-gray-600" placeholder="Your Email Address" />
           <select class="select select-ghost bg-base-100 text-gray-600">
-            <option disabled selected>Pick a font</option>
+            <option disabled selected>Number of tree</option>
             <option>Inter</option>
             <option>Poppins</option>
             <option>Raleway</option>
           </select>
 
-          <button class="btn btn-outline btn-warning-100 bg-[#FACC15] rounded-full text-[#15803D]  ">Plant a Tree</button>
+          <button class="btn btn-outline btn-warning-100 bg-[#FACC15] rounded-full text-[#15803D]  ">Donate Now</button>
 
         </fieldset>
   </div>
@@ -126,6 +142,6 @@ generations.
   </div>
 
 </footer>
-
+<script src="index.js"></script>
 </body>
 </html>
