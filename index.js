@@ -1,34 +1,53 @@
 
+// catagory part 
 
 const loadCategories = () => {
   fetch("https://openapi.programming-hero.com/api/categories")
     .then(res => res.json())
     .then(result => {
       const categories = result.categories;
+       
       const list = document.getElementById("categories");
+        
       list.innerHTML = "";
       categories.forEach((category) => {
+        
         const li = document.createElement("li");
-        li.innerHTML = `<p  onclick="clickCategory('${category.id}')" class="hover:text-white hover:bg-green-600 p-7">${category.category_name}</>`;
+        
+        li.innerHTML = `<p  onclick="clickCategory('${category.id}')" class="hover:text-white hover:bg-green-600 p-7 category-clicked ">${category.category_name}</p>`;
       
-      
+       li.querySelector("p").addEventListener("click", function() {
+          removeActive();          
+          this.classList.add("active"); 
+         
+          
+        });
         list.appendChild(li);
       });
       
+
+      
     });
 };
+
 loadCategories();
 
+const removeActive = () => {
+  const clickedCategory = document.querySelectorAll(".category-clicked");
+  
+  clickedCategory.forEach((category) => category.classList.remove("active"));
+};
 
-
-
+// click category and display plant part 
 
 const clickCategory=(id)=>{
   fetch(`https://openapi.programming-hero.com/api/category/${id}`)
     .then(res => res.json())
     .then(data => { console.log(data)
+     
       const cards = data.plants;
       const div = document.getElementById("all-cards")
+      
       div.innerHTML = "";
       cards.forEach((card) => {
         const newDiv = document.createElement("div");
@@ -64,7 +83,7 @@ const clickCategory=(id)=>{
 
 
 
-
+// main plant display part
 
 const allPlantsCard = () => {
   fetch("https://openapi.programming-hero.com/api/plants")
@@ -131,9 +150,9 @@ const openModal = (id) => {
 };
 
 
+// add cart part 
 
 
-let totalPrice = 0;
 
 const addToCart = (id) => {
   fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
@@ -154,16 +173,16 @@ const addToCart = (id) => {
       `;
       cartContainer.appendChild(div);
 
-      totalPrice += plant.price;
+      totalPrice += parseInt(plant.price) ;
       document.getElementById("cart-total").textContent = totalPrice;
     });
 };
-
+let totalPrice = 0; 
 function removeFromCart(price) {
 
   document.getElementById(`cross`).parentElement.remove();
 
-  totalPrice = totalPrice - price;
+  totalPrice = totalPrice - parseInt(price);
   document.getElementById("cart-total").innerText = totalPrice;
 }
 
